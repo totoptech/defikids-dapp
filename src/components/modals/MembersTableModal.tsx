@@ -116,16 +116,7 @@ export const MembersTableModal = ({
   const userExists = (email: string, users: User[]) => {
     const user = users.find((user) => user.email === email);
 
-    if (user) {
-      toast({
-        title: "Error",
-        description: "This user is already a member of your family.",
-        status: "error",
-      });
-      setHasSubmitted(false);
-      setEmailAddress("");
-      return true;
-    }
+    
     return false;
   };
 
@@ -159,6 +150,16 @@ export const MembersTableModal = ({
   };
 
   const storeInvitation = async (email: string, token: any) => {
+    if (user) {
+      toast({
+        title: "Error",
+        description: "This user is already a member of your family.",
+        status: "error",
+      });
+      setHasSubmitted(false);
+      setEmailAddress("");
+      return true;
+    }
     try {
       const invitationPayload = {
         accountId: user.accountId,
@@ -200,14 +201,6 @@ export const MembersTableModal = ({
           jwtid: Date.now().toString(),
         }
       );
-
-      const payload = {
-        token,
-        email,
-        familyName,
-      };
-
-      await axios.post(`/api/emails/invite-member`, payload);
 
       await storeInvitation(email, token);
 
