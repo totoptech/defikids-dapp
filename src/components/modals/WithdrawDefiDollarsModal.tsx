@@ -57,10 +57,6 @@ export const WithdrawDefiDollarsModal = ({
         backdropBlur="4px"
       />
       <ModalContent>
-        <ModalHeader>
-          <Heading fontSize="sm">Withdraw DefiDollars</Heading>
-        </ModalHeader>
-        <ModalCloseButton />
         <ModalBody>
           {showExplanation
             ? showMemberWithdrawExplaination()

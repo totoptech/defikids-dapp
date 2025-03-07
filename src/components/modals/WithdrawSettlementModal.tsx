@@ -38,9 +38,6 @@ export const WithdrawSettlementModal = ({
         <ModalCloseButton />
         <ModalBody>
           <Box>
-            <Heading fontSize={"xl"} my={5}>
-              Settle Withdraw Request
-            </Heading>
             <TransactionStepper
               activeStep={activeStep}
               context={StepperContext.WITHDRAW_SETTLED}
