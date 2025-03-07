@@ -75,6 +75,20 @@ export const EtherscanModal = ({
           </Text>
         </Flex>
 
+        <Button
+            w="auto"
+            h="40px"
+            colorScheme="blue"
+            onClick={() => {
+              if (chain?.id === validChainId)
+                window.open(
+                  `https://goerli.etherscan.io/address/${DEFIKIDS_PROXY_ADDRESS}`,
+                  "_blank"
+                );
+            }}
+          >
+            DefiDollars Contract
+          </Button>
         <Stack direction="column" spacing="24px">
           <Button
             colorScheme="blue"
@@ -88,20 +102,6 @@ export const EtherscanModal = ({
             }}
           >
             My Transaction History
-          </Button>
-          <Button
-            w="auto"
-            h="40px"
-            colorScheme="blue"
-            onClick={() => {
-              if (chain?.id === validChainId)
-                window.open(
-                  `https://goerli.etherscan.io/address/${DEFIKIDS_PROXY_ADDRESS}`,
-                  "_blank"
-                );
-            }}
-          >
-            DefiDollars Contract
           </Button>
         </Stack>
       </>
@@ -126,6 +126,7 @@ export const EtherscanModal = ({
       <ModalContent>
         <ModalHeader>
           <Heading fontSize="sm">Etherscan</Heading>
+          <Heading fontSize="sm">Below</Heading>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>

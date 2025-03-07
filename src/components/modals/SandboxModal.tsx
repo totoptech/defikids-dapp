@@ -53,15 +53,6 @@ const SandboxModal = ({ isOpen, onClose, learnMoreContent }) => {
               pt={2}
               px={10}
             >
-              <GridItem rowSpan={1} colSpan={5} overflowY="scroll">
-                {learnMoreContent.description.map(
-                  (text: string, index: number) => (
-                    <Text mb={5} color="black" fontSize="lg" key={index}>
-                      {text}
-                    </Text>
-                  )
-                )}
-              </GridItem>
             </Grid>
           </Flex>
         </ModalBody>
