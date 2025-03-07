@@ -62,11 +62,7 @@ export const InfoModal = ({
                   <AccordionItem key={title}>
                     <h2>
                       <AccordionButton borderBottom="1px">
-                        <Box as="span" flex="1" textAlign="left">
-                          <Heading as="h3" size="md" color="black">
-                            {title}
-                          </Heading>
-                        </Box>
+                        
                         <AccordionIcon color="black" />
                       </AccordionButton>
                     </h2>
@@ -86,6 +82,11 @@ export const InfoModal = ({
                           </Button>
                         </Flex>
                       </Box>
+                      <Box as="span" flex="1" textAlign="left">
+                          <Heading as="h3" size="md" color="black">
+                            {title}
+                          </Heading>
+                        </Box>
                     </AccordionPanel>
                   </AccordionItem>
                 ))}

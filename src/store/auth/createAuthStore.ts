@@ -64,12 +64,6 @@ const setters = (set: any) => ({
     disconnect();
   },
 
-  setMobileMenuOpen: (mobileMenuOpen: boolean) => {
-    set((state: { mobileMenuOpen: boolean }) => {
-      state.mobileMenuOpen = mobileMenuOpen;
-    }, shallow);
-  },
-
   setRecentActivity: (recentActivity: IActivity[]) => {
     set((state: { recentActivity: IActivity[] }) => {
       state.recentActivity = recentActivity;
@@ -85,7 +79,7 @@ const setters = (set: any) => ({
 // Store
 export const authStore = createWithEqualityFn<
   MyStore,
-  [["zustand/devtools", never], ["zustand/immer", never]]
+  [["zustand", never], ["zustand", never]]
 >(
   devtools(
     immer((set) => ({
